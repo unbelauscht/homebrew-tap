@@ -9,11 +9,14 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["homebrew"],
+      "matchManagers": [
+        "homebrew"
+      ],
       "commitMessagePrefix": "chore(formula):",
       "commitMessageTopic": "{{depName}}",
       "automerge": true,
       "automergeType": "branch"
     }
-  ]
+  ],
+  "dependencyDashboard": true
 }
