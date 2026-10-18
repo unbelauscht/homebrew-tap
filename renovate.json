@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Auto-bump Homebrew formulae on new GitHub releases",
+  "extends": [
+    "config:recommended"
+  ],
+  "homebrew": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["homebrew"],
+      "commitMessagePrefix": "chore(formula):",
+      "commitMessageTopic": "{{depName}}",
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
+}

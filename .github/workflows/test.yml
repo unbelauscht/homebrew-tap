@@ -1,0 +1,22 @@
+name: Test Formulae
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Validate Formulae
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Ruby syntax
+        run: |
+          for f in Formula/*.rb; do
+            echo "Checking $f..."
+            ruby -c "$f"
+          done
